@@ -1,5 +1,6 @@
 package com.api.parkingcontrol;
 
+import com.api.parkingcontrol.models.ParkingSpotModel;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ public class ParkinControlApplication {
 
     @GetMapping("/")
     public String index(){
-        return "Hello World!";
+        return "Hello World";
 
     }
 }
