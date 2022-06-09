@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.api.parkin-control' is invalid and this project uses 'com.api.parkincontrol' instead.
+* The original package name 'com.api.parkin-control' is invalid and this project uses 'com.api.parkingcontrol' instead.
 
 # Getting Started
 

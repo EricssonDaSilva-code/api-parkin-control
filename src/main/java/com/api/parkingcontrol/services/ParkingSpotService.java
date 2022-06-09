@@ -1,8 +1,8 @@
-package com.api.parkincontrol.services;
+package com.api.parkingcontrol.services;
 
 
-import com.api.parkincontrol.models.ParkingSpotModel;
-import com.api.parkincontrol.repositories.ParkingSpotRepository;
+import com.api.parkingcontrol.models.ParkingSpotModel;
+import com.api.parkingcontrol.repositories.ParkingSpotRepository;
 
 
 import org.springframework.stereotype.Service;
