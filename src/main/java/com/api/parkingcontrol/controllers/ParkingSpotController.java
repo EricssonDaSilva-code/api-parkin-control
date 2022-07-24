@@ -3,8 +3,6 @@ package com.api.parkingcontrol.controllers;
 import com.api.parkingcontrol.dtos.ParkingSpotDto;
 import com.api.parkingcontrol.models.ParkingSpotModel;
 import com.api.parkingcontrol.services.ParkingSpotService;
-import org.apache.catalina.filters.ExpiresFilter;
-import org.apache.coyote.Response;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
@@ -17,13 +15,11 @@ import javax.validation.Valid;
 import java.awt.print.Pageable;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/parking-spot")
+@RequestMapping("/parking-spots")
 public class ParkingSpotController {
 
     final ParkingSpotService parkingSpotService;
@@ -78,7 +74,7 @@ public class ParkingSpotController {
         if (!parkingSpotModelOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Parking Spot not Found.");
         }
-        var parkingSpotModel = new ParkingSpotModel();// realizar das dias maneiras
+        var parkingSpotModel = new ParkingSpotModel();// realizar das duas maneiras
         BeanUtils.copyProperties(parkingSpotDto, parkingSpotModel);
         parkingSpotModel.setId(parkingSpotModelOptional.get().getId());
         parkingSpotModel.setRegistrationDate(parkingSpotModelOptional.get().getRegistrationDate());
