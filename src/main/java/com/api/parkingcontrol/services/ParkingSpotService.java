@@ -3,13 +3,12 @@ package com.api.parkingcontrol.services;
 import com.api.parkingcontrol.models.ParkingSpotModel;
 import com.api.parkingcontrol.repositories.ParkingSpotRepository;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.awt.print.Pageable;
 import java.util.Optional;
 import java.util.UUID;
-
 
 @Service
 public class ParkingSpotService {
@@ -38,7 +37,7 @@ public class ParkingSpotService {
     }
 
     public Page<ParkingSpotModel> findAll(Pageable pageable) {
-        return parkingSpotRepository.findAll((org.springframework.data.domain.Pageable) pageable);
+        return parkingSpotRepository.findAll(pageable);
     }
 
     public Optional<ParkingSpotModel> findById(UUID id) {
